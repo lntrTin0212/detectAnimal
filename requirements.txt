@@ -6,3 +6,4 @@ django-cors-headers
 keras
 #tesorflow
 gunicorn==20.1.0
+cloudinary
