@@ -1,5 +1,5 @@
 numpy==1.19.4
-absl-py==1.0.0
+absl-py==0.10
 asgiref==3.4.1
 astunparse==1.6.3
 cachetools==4.2.4
