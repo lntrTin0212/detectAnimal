@@ -13,27 +13,27 @@ import os
 
 # from ..tutorialAPI import settings 
 #to get the current working directory
-def runApp():
-    model = VGG16(weights='imagenet')
+# def runApp():
+#     model = VGG16(weights='imagenet')
     
-    os.chdir("C:/Users/TKiTECH/Desktop/Lntr.tin/hoctap/LV/Django/tutorial/InveptionV3/animal")
-    directory = os.getcwd()
-    print("this is directory: ",directory)
-    data_dir = pathlib.Path(directory)
+#     os.chdir("C:/Users/TKiTECH/Desktop/Lntr.tin/hoctap/LV/Django/tutorial/InveptionV3/animal")
+#     directory = os.getcwd()
+#     print("this is directory: ",directory)
+#     data_dir = pathlib.Path(directory)
 
-    img_path = list(data_dir.glob('*'))
-    img = image.load_img(img_path[10], color_mode='rgb', target_size=(224, 224))
-    img.show()
+#     img_path = list(data_dir.glob('*'))
+#     img = image.load_img(img_path[10], color_mode='rgb', target_size=(224, 224))
+#     img.show()
 
-    x = image.img_to_array(img)
-    x.shape
-    x = np.expand_dims(x, axis=0)
+#     x = image.img_to_array(img)
+#     x.shape
+#     x = np.expand_dims(x, axis=0)
 
-    x = preprocess_input(x)
-    features = model.predict(x)
-    p = decode_predictions(features)
+#     x = preprocess_input(x)
+#     features = model.predict(x)
+#     p = decode_predictions(features)
 
-    return p[0]
+#     return p[0]
 
 
 
