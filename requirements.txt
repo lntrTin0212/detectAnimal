@@ -1,4 +1,4 @@
-numpy==1.20.0
+numpy==1.19.5
 absl-py==1.0.0
 asgiref==3.4.1
 astunparse==1.6.3
@@ -28,7 +28,7 @@ grpcio==1.46.0
 h5py==3.1.0
 idna==3.3
 ijson==2.6.1
-imageio==2.16.0
+imageio==2.10.1
 imutils==0.5.4
 itsdangerous==2.0.1
 Jinja2==3.0.3
