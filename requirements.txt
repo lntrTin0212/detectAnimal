@@ -32,7 +32,6 @@ imageio
 imutils
 itsdangerous
 Jinja2
-keras~=2.6
 Keras-Preprocessing
 kiwisolver
 libclang
