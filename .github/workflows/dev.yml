@@ -26,7 +26,6 @@ jobs:
           pip install numpy --use-deprecated=legacy-resolver
           pip install keras==2.6
           pip install -r requirements.txt
-          pip install pycodestyle
       #- name: Run migrations
        # run: |
         #  python manage.py makemigrations --noinput
@@ -34,5 +33,4 @@ jobs:
       - name: Run Tests
         run: |
           python manage.py test
-      - name: Check Syntax #We are just testing the syntax in names app; pycodestyle uses pep8 conventions of max line length of 79 characters while Django recommends 119 characters
-        run: pycodestyle --statistics **/*.py
+  
