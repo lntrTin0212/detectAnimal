@@ -1,18 +1,19 @@
 name: Main Workflow - Test and Deploy
 
+
 on:
   pull_request:
-    branches: [main]
+    branches: [develop]
   push:
-    branches: [main]
+    branches: [develop]
 
 jobs:
   health-checkup-job: #Check the healthy by running tests
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.8]
+        python-version: ['3.6', '3.7', '3.8', '3.9', '3.10.0']
 
     steps:
       - uses: actions/checkout@v2
@@ -23,19 +24,20 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
+          pip install numpy --use-deprecated=legacy-resolver
+          pip install keras==2.6
           pip install -r requirements.txt
       #- name: Run migrations
-     #   run: |
-       #   python manage.py makemigrations --noinput
-        #  python manage.py migrate --noinput
+       # run: |
+        #  python manage.py makemigrations --noinput
+         # python manage.py migrate --noinput
       - name: Run Tests
         run: |
           python manage.py test
-      - name: Check Syntax #We are just testing the syntax in names app; pycodestyle uses pep8 conventions of max line length of 79 characters while Django recommends 119 characters
-        run: pycodestyle --statistics **/*.py
+  
   #Before deploy job you would usually have the build job in case you are using docker images
   deploy-job:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     needs: [health-checkup-job]
     if: ${{ github.event_name == 'push' }}
     steps:
