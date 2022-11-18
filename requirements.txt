@@ -72,7 +72,7 @@ sqlparse
 tensorboard
 tensorboard-data-server
 tensorboard-plugin-wit
-tensorflow
+tensorflow==2.8
 tensorflow-io-gcs-filesystem
 termcolor
 tf-estimator-nightly
