@@ -3,9 +3,9 @@ name: Main Workflow - Test and Deploy
 
 on:
   pull_request:
-    branches: [develop]
+    branches: [main]
   push:
-    branches: [develop]
+    branches: [main]
 
 jobs:
   health-checkup-job: #Check the healthy by running tests
