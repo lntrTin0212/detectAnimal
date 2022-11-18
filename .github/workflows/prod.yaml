@@ -9,7 +9,7 @@ on:
 
 jobs:
   health-checkup-job: #Check the healthy by running tests
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
       matrix:
@@ -37,7 +37,7 @@ jobs:
   
   #Before deploy job you would usually have the build job in case you are using docker images
   deploy-job:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     needs: [health-checkup-job]
     if: ${{ github.event_name == 'push' }}
     steps:
